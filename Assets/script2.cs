@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerController : MonoBehaviour
+public class script2 : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
@@ -12,8 +12,8 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveX = Input.GetAxisRaw("Horizontal1");
-        float moveY = Input.GetAxisRaw("Vertical1");
+        float moveX = Input.GetAxisRaw("Horizontal2");
+        float moveY = Input.GetAxisRaw("Vertical2");
 
 
         moveDirection = new Vector2(moveX, moveY).normalized;

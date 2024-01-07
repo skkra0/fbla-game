@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Weapon2 : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -16,8 +16,8 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveX = Input.GetAxisRaw("Horizontal1");
-        float moveY = Input.GetAxisRaw("Vertical1");
+        float moveX = Input.GetAxisRaw("Horizontal2");
+        float moveY = Input.GetAxisRaw("Vertical2");
 
         if (Input.GetMouseButtonDown(0))
         {
