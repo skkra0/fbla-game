@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl282yrc46r2v"]
+
+[ext_resource type="PackedScene" uid="uid://c6m3qx1oqrpaw" path="res://Characters/player_del.tscn" id="1_v7h4p"]
+
+[node name="GameLevel" type="Node2D"]
+
+[node name="PlayerDel" parent="." instance=ExtResource("1_v7h4p")]
