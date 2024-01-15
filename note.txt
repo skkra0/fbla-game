@@ -1,1 +1,2 @@
 - get other side walk animation frames
+- wall collision
