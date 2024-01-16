@@ -1,2 +1,2 @@
 - get other side walk animation frames
-- wall collision
+- separate collider for the wall and battle

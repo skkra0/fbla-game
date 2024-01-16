@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3ykyvr5nh40p" path="res://Art/walk_side.png" id="1_xqswg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yuyy"]
-size = Vector2(17, 38)
+size = Vector2(17, 10)
 
 [node name="PlayerDel" type="CharacterBody2D"]
 script = ExtResource("1_0pfuk")
@@ -14,5 +14,5 @@ scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_xqswg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
+position = Vector2(0.5, 14)
 shape = SubResource("RectangleShape2D_6yuyy")
