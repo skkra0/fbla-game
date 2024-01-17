@@ -1,2 +1,1 @@
-- get other side walk animation frames
-- separate collider for the wall and battle
+- create enemy
