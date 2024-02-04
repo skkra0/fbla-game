@@ -2,6 +2,26 @@ extends CharacterBody2D
 
 @export var move_speed : float = 100
 
+const bulletPath = preload('res://Bullet.tscn.tscn')
+
+func _ready():
+	pass
+	
+func _process(delta):		
+	$Node2D.look_at(get_global_mouse_position())
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		shoot()
+
+func shoot():
+	var bullet = bulletPath.instantiate()
+	
+	get_parent().add_child(bullet)
+	bullet.position = $Node2D/Marker2D.global_position
+	
+	bullet.velo = get_global_mouse_position() - bullet.position
+
 func _physics_process(_delta):
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),

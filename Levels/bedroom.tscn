@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dyyo0ynmrhqn7"]
+[gd_scene load_steps=15 format=3 uid="uid://dyyo0ynmrhqn7"]
 
 [ext_resource type="PackedScene" uid="uid://c6m3qx1oqrpaw" path="res://Characters/player_del.tscn" id="1_wlons"]
 [ext_resource type="Texture2D" uid="uid://cf8ji7gxq86mj" path="res://Art/small indoor tileset/Carpets 4.png" id="2_iayc8"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bbvwu7p02cpop" path="res://Art/sierrassets furniture pack/furniture/individual sprites/part-Slice 148.png" id="5_edtw3"]
 [ext_resource type="Texture2D" uid="uid://b60esdyjipph1" path="res://Art/sierrassets furniture pack/furniture/individual sprites/part-Slice 359.png" id="6_c1cp0"]
 [ext_resource type="Texture2D" uid="uid://coh1icf0vi1xi" path="res://Art/sierrassets furniture pack/floors and walls/floor and walls spritesheet.png" id="7_ddbj6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p28rv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lhiw"]
 texture = ExtResource("2_iayc8")
@@ -845,6 +847,16 @@ size = Vector2(26, 10)
 
 [node name="PlayerDel" parent="." instance=ExtResource("1_wlons")]
 position = Vector2(304, 104)
+
+[node name="Node2D" type="Node2D" parent="PlayerDel"]
+
+[node name="Marker2D" type="Marker2D" parent="PlayerDel/Node2D"]
+position = Vector2(30, 0)
+
+[node name="FiringArm" type="Sprite2D" parent="PlayerDel/Node2D"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerDel"]
+shape = SubResource("RectangleShape2D_p28rv")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_nu54r")
