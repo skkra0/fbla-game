@@ -10,14 +10,14 @@ func _physics_process(_delta):
 	var animated_sprite = $AnimatedSprite2D
 	if input_direction.x > 0:
 		animated_sprite.flip_h = false
-		animated_sprite.play("walk")
 	elif input_direction.x < 0:
 		animated_sprite.flip_h = true
+	
+	if (input_direction.length() != 0):
 		animated_sprite.play("walk")
 	else:
 		animated_sprite.stop()
 		animated_sprite.frame = 1
-		
-	velocity = input_direction * move_speed
 	
+	velocity = input_direction * move_speed
 	move_and_slide()

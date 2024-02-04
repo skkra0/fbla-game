@@ -1,13 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvq5y4gae8fkx"]
+[gd_scene load_steps=12 format=3 uid="uid://dvq5y4gae8fkx"]
 
 [ext_resource type="PackedScene" uid="uid://c6m3qx1oqrpaw" path="res://Characters/player_del.tscn" id="1_1l8od"]
 [ext_resource type="Texture2D" uid="uid://cf8ji7gxq86mj" path="res://Art/small indoor tileset/Carpets 4.png" id="2_i6lrn"]
 [ext_resource type="Texture2D" uid="uid://s1yv8dmneyxv" path="res://Art/small indoor tileset/4 Walls, Floor & Doors.png" id="3_y01g5"]
 [ext_resource type="Texture2D" uid="uid://dio8pudchlkjw" path="res://Art/small indoor tileset/Furniture 4.png" id="4_0xpet"]
 [ext_resource type="Texture2D" uid="uid://blygsuawg7fgl" path="res://Art/sierrassets furniture pack/furniture/furniture pack coloured outline.png" id="5_pyeh7"]
-[ext_resource type="Texture2D" uid="uid://dmu6lxlnglovc" path="res://Art/sierrassets furniture pack/furniture/individual sprites/part-Slice 267.png" id="6_ra67d"]
-[ext_resource type="Texture2D" uid="uid://wvj2as8f4u6i" path="res://Art/sierrassets furniture pack/furniture/individual sprites/part-Slice 11.png" id="7_useg0"]
-[ext_resource type="Texture2D" uid="uid://ccdumtmhb8ueg" path="res://Art/sierrassets furniture pack/furniture/individual sprites/part-Slice 10.png" id="8_ua5nv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ny6p8"]
 texture = ExtResource("2_i6lrn")
@@ -1525,17 +1522,3 @@ layer_1/tile_data = PackedInt32Array(655360, 262147, 1, 655361, 327683, 1, 65537
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_o7ung")
 format = 2
-
-[node name="Part-slice267" type="Sprite2D" parent="."]
-position = Vector2(273, 206)
-scale = Vector2(1.4375, 1.71429)
-texture = ExtResource("6_ra67d")
-
-[node name="Part-slice11" type="Sprite2D" parent="."]
-position = Vector2(177, 246)
-texture = ExtResource("7_useg0")
-
-[node name="Part-slice10" type="Sprite2D" parent="."]
-position = Vector2(143, 202)
-scale = Vector2(2, 2)
-texture = ExtResource("8_ua5nv")
