@@ -1,10 +1,12 @@
 extends CharacterBody2D
 var hp = 50
+var can_shoot = true
+var cooldown = 0.2
 @export var move_speed : float = 100
 const bulletPath = preload('res://PlayerBullet.tscn')
 
 func _ready():
-	pass
+	$Cooldown.wait_time = cooldown
 	
 func _process(_delta):		
 	$Node2D.look_at(get_global_mouse_position())
@@ -17,11 +19,16 @@ func _input(event):
 		shoot()
 
 func shoot():
-	var bullet = bulletPath.instantiate()
-	owner.add_child(bullet)
-	bullet.transform = $Node2D/Marker2D.global_transform
-	bullet.position = $Node2D/Marker2D.global_position
-	
+	if can_shoot:
+		can_shoot = false
+		$Cooldown.start()
+		var bullet = bulletPath.instantiate()
+		owner.add_child(bullet)
+		bullet.transform = $Node2D/Marker2D.global_transform
+		bullet.position = $Node2D/Marker2D.global_position
+
+func _on_cooldown_timeout():
+	can_shoot = true
 
 func _physics_process(_delta):
 	var input_direction = Vector2(

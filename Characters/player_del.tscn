@@ -66,3 +66,7 @@ offset = Vector2(69.0807, 52.0326)
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("5_0lypt")
+
+[node name="Cooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
