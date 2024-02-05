@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dyyo0ynmrhqn7"]
+[gd_scene load_steps=15 format=3 uid="uid://dyyo0ynmrhqn7"]
 
 [ext_resource type="PackedScene" uid="uid://c6m3qx1oqrpaw" path="res://Characters/player_del.tscn" id="1_wlons"]
 [ext_resource type="Texture2D" uid="uid://cf8ji7gxq86mj" path="res://Art/small indoor tileset/Carpets 4.png" id="2_iayc8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bbvwu7p02cpop" path="res://Art/sierrassets furniture pack/furniture/individual sprites/part-Slice 148.png" id="5_edtw3"]
 [ext_resource type="Texture2D" uid="uid://b60esdyjipph1" path="res://Art/sierrassets furniture pack/furniture/individual sprites/part-Slice 359.png" id="6_c1cp0"]
 [ext_resource type="Texture2D" uid="uid://coh1icf0vi1xi" path="res://Art/sierrassets furniture pack/floors and walls/floor and walls spritesheet.png" id="7_ddbj6"]
+[ext_resource type="PackedScene" uid="uid://b3t7hpl4rtx4" path="res://Levels/boss1.tscn" id="8_fkv4t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lhiw"]
 texture = ExtResource("2_iayc8")
@@ -768,3 +769,6 @@ texture = ExtResource("3_cec53")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table"]
 position = Vector2(-80, -13.3453)
 shape = SubResource("RectangleShape2D_1nrjt")
+
+[node name="Boss1" parent="." instance=ExtResource("8_fkv4t")]
+position = Vector2(219, 281)
