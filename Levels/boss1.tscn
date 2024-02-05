@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3t7hpl4rtx4"]
+
+[ext_resource type="Script" path="res://Levels/boss1.gd" id="1_41f5a"]
+[ext_resource type="Texture2D" uid="uid://bgaflnlclnlks" path="res://icon.svg" id="1_wqmf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iptlb"]
+size = Vector2(64, 64)
+
+[node name="Boss1" type="CharacterBody2D"]
+script = ExtResource("1_41f5a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(34, 32)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_wqmf5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34, 32)
+shape = SubResource("RectangleShape2D_iptlb")
+
+[node name="HP" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
