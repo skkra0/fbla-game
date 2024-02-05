@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://domol3h3w360e"]
+
+[ext_resource type="Script" path="res://Levels/intro.gd" id="1_8mfcr"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_8mfcr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(640, 360)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(540, 260)
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 590.0
+offset_bottom = 310.0
+theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
+text = "You are a delegate at an FBLA conference. For the last several months, you've been tirelessly preparing a presentation for your event. Today it all pays off. Make your way from your room to the auditorium to present your work to the judges. But be careful; the hotel is infested with blights, who will try to stop you. 
+
+Controls:
+WASD - movement
+
+
+Press enter to continue"

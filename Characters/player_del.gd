@@ -1,14 +1,16 @@
 extends CharacterBody2D
-
+var hp = 50
 @export var move_speed : float = 100
-
-const bulletPath = preload('res://Bullet.tscn')
+const bulletPath = preload('res://PlayerBullet.tscn')
 
 func _ready():
 	pass
 	
-func _process(delta):		
+func _process(_delta):		
 	$Node2D.look_at(get_global_mouse_position())
+	
+	if hp <= 0:
+		queue_free() # remove player
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
@@ -16,7 +18,6 @@ func _input(event):
 
 func shoot():
 	var bullet = bulletPath.instantiate()
-	
 	owner.add_child(bullet)
 	bullet.transform = $Node2D/Marker2D.global_transform
 	bullet.position = $Node2D/Marker2D.global_position

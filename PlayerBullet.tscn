@@ -5,9 +5,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h30e0"]
 
-[node name="Bullet_tscn" type="Node2D"]
+[node name="PlayerBullet" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
 script = ExtResource("1_sen1g")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
