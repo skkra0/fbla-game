@@ -17,7 +17,7 @@ offset_top = 50.0
 offset_right = 590.0
 offset_bottom = 310.0
 theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
-text = "You are a delegate at an FBLA conference. For the last several months, you've been tirelessly preparing a presentation for your event. Today it all pays off. Make your way from your room to the auditorium to present your work to the judges. But be careful; the hotel is infested with blights, who will try to stop you. 
+text = "You are a delegate at an FBLA conference. For the last several months, you've been tirelessly preparing a presentation for your event. Today it all pays off. Make your way from your room to the auditorium to present your work to the judges. But be careful; the hotel is infested with blights, who will try to stop you. Use your laser pointer to fend them off!
 
 Controls:
 WASD - movement
