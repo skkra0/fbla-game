@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://5sj4iyamv5ny"]
+
+[ext_resource type="Script" path="res://EnemyBullet.gd" id="1_jv8pc"]
+[ext_resource type="Texture2D" uid="uid://bgaflnlclnlks" path="res://icon.svg" id="2_6m6ds"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bbcw"]
+
+[node name="EnemyBullet" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_jv8pc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.160156, 0.160156)
+texture = ExtResource("2_6m6ds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0bbcw")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

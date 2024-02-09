@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 300
+var speed = 100
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
@@ -9,7 +9,7 @@ func _on_VisibleOnScreenNotifier2D_screen_exited():
 	queue_free()
 
 func _on_body_entered(body):
-	if body.name == "Boss1":
+	if body.name == "player_del":
 		body.hp -= 1
-		print("HIT!")
+		print("Youch!")
 		queue_free()
