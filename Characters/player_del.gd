@@ -15,7 +15,7 @@ func _process(_delta):
 		queue_free() # remove player
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		shoot()
 
 func shoot():
@@ -49,3 +49,8 @@ func _physics_process(_delta):
 	
 	velocity = input_direction * move_speed
 	move_and_slide()
+
+
+func _on_hurtbox_body_shape_entered():
+	print("shot")
+	hp -= 5 # this may or may not work as intended
