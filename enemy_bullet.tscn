@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://5sj4iyamv5ny"]
+
+[ext_resource type="Script" path="res://EnemyBullet.gd" id="1_jv8pc"]
+[ext_resource type="Texture2D" uid="uid://bgaflnlclnlks" path="res://icon.svg" id="2_6m6ds"]
+
+[node name="EnemyBullet" type="Node2D"]
+script = ExtResource("1_jv8pc")
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6m6ds")
