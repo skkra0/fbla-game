@@ -27,4 +27,14 @@ offset_bottom = 23.0
 [node name="Rotater" type="Node2D" parent="."]
 position = Vector2(33, 32)
 
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
+position = Vector2(90, 33)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(84, 33)
+scale = Vector2(0.0859375, 0.0859375)
+texture = ExtResource("1_wqmf5")
+
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

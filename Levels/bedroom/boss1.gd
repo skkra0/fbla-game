@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var hp = 10
 
+const player_del = preload("res://Characters/player_del.tscn")
 const bullet_scene = preload("res://enemy_bullet.tscn")
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
@@ -29,14 +30,20 @@ func _ready():
 func _process(delta):		
 	var new_rotation = rotater.rotation_degrees + rotate_speed * delta
 	rotater.rotation_degrees = fmod(new_rotation, 360)
+	#THIS DOESNT WORK
+	#$Node2D.look_at(player_del)
 	if hp <= 0:
 		queue_free()
 
 func _on_shoot_timer_timeout():
-	print("woho")
 	for s in rotater.get_children():
-		print("I should be working")
 		var bullet = bullet_scene.instantiate()
 		owner.add_child(bullet)
 		bullet.position = s.global_position
 		bullet.rotation = s.global_rotation
+
+func _shoot():
+	var bullet = bullet_scene.instantiate()
+	owner.add_child(bullet)
+	bullet.transform = $Node2D/Marker2D.global_transform
+	bullet.position = $Node2D/Marker2D.global_position	
