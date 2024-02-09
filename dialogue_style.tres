@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=2 format=3 uid="uid://dcun5t4l5mcf1"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="1_asuqk"]
+
+[resource]
+script = ExtResource("1_asuqk")
+name = "dialogue_style"
+base_overrides = {
+"global_bg_color": "Color(0.0392157, 0.180392, 0.498039, 1)"
+}
+layers = Array[Resource("res://addons/dialogic/Resources/dialogic_style_layer.gd")]([])
+metadata/_latest_layer = -1
