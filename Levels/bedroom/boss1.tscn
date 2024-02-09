@@ -25,3 +25,6 @@ offset_bottom = 23.0
 [node name="ShootTimer" type="Timer" parent="."]
 
 [node name="Rotater" type="Node2D" parent="."]
+position = Vector2(33, 32)
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

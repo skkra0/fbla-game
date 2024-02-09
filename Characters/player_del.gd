@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var hp = 50
+var hp = 10
 var can_shoot = true
 var cooldown = 0.2
 @export var move_speed : float = 100
