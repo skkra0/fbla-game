@@ -6,7 +6,7 @@
 size = Vector2(17, 10)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l713l"]
-radius = 22.561
+radius = 30.0666
 
 [node name="NPC" type="CharacterBody2D"]
 z_index = -1

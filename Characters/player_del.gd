@@ -1,6 +1,7 @@
 extends CharacterBody2D
 var hp = 10
 var can_shoot = true
+var can_move = true
 var cooldown = 0.2
 @export var move_speed : float = 100
 const bulletPath = preload('res://PlayerBullet.tscn')
@@ -36,13 +37,17 @@ func _physics_process(_delta):
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
 	var animated_sprite = $AnimatedSprite2D
-	if input_direction.x > 0:
-		animated_sprite.flip_h = false
-	elif input_direction.x < 0:
-		animated_sprite.flip_h = true
-	
-	if (input_direction.length() != 0):
-		animated_sprite.play("walk")
+	if can_move:
+		if input_direction.x > 0:
+			animated_sprite.flip_h = false
+		elif input_direction.x < 0:
+			animated_sprite.flip_h = true
+		
+		if (input_direction.length() != 0):
+			animated_sprite.play("walk")
+		else:
+			animated_sprite.stop()
+			animated_sprite.frame = 1
 	else:
 		animated_sprite.stop()
 		animated_sprite.frame = 1

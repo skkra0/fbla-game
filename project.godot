@@ -22,7 +22,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"friend1": "res://Levels/hallway/friend1.dch"
+"friend1": "res://Levels/hallway/friend1.dch",
+"player_del": "res://Characters/player_del.dch"
 }
 directories/dtl_directory={
 "hallway": "res://Levels/hallway/hallway.dtl"
