@@ -9,7 +9,7 @@
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 4
+collision_mask = 0
 script = ExtResource("1_jv8pc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]

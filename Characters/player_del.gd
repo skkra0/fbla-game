@@ -56,6 +56,7 @@ func _physics_process(_delta):
 	move_and_slide()
 
 
-func _on_hurtbox_body_shape_entered():
+
+func _on_hurtbox_area_entered(area):
 	print("shot")
-	hp -= 5 # this may or may not work as intended
+	hp -= 1

@@ -9,7 +9,8 @@ func _on_VisibleOnScreenNotifier2D_screen_exited():
 	queue_free()
 
 func _on_body_entered(body):
-	if body.name == "player_del":
-		body.hp -= 1
-		print("Youch!")
-		queue_free()
+	#if body.name == "PlayerDel":
+	#	body.hp -= 1
+	#	print("Youch!")
+	#	queue_free()
+	pass
