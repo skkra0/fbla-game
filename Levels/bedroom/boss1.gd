@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var hp = 10
 
-const player_del = preload("res://Characters/player_del.tscn")
+const player_del = preload("res://Characters/player_del.tscn") # why though
 const bullet_scene = preload("res://enemy_bullet.tscn")
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
@@ -47,3 +47,10 @@ func _shoot():
 	owner.add_child(bullet)
 	bullet.transform = $Node2D/Marker2D.global_transform
 	bullet.position = $Node2D/Marker2D.global_position	
+
+
+
+func _on_hurtbox_area_entered(area):
+	hp -= 1
+	area.queue_free()
+	print("HIT")

@@ -2,7 +2,7 @@ extends CharacterBody2D
 var hp = 10
 var can_shoot = true
 var can_move = true
-var cooldown = 0.2
+var cooldown = 0.1
 @export var move_speed : float = 100
 const bulletPath = preload('res://PlayerBullet.tscn')
 
@@ -58,5 +58,6 @@ func _physics_process(_delta):
 
 
 func _on_hurtbox_area_entered(area):
+	area.queue_free()
 	print("shot")
 	hp -= 1

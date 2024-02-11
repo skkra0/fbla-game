@@ -10,10 +10,10 @@ func _process(_delta):
 	pass
 
 func _on_boss1_tree_exited():
-	$Exit.process_mode = Node.PROCESS_MODE_INHERIT
+	$Exit.process_mode = Node.PROCESS_MODE_INHERIT # enables the exit
 
 
 func _on_exit_body_entered(body):
-	print("hi")
+	print("exit entered")
 	if body == $PlayerDel:
 		get_tree().change_scene_to_file("res://Levels/hallway/hallway.tscn")
