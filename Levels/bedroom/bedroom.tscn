@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dyyo0ynmrhqn7"]
+[gd_scene load_steps=18 format=3 uid="uid://dyyo0ynmrhqn7"]
 
 [ext_resource type="Script" path="res://Levels/bedroom/bedroom.gd" id="1_nvqpj"]
 [ext_resource type="PackedScene" uid="uid://c6m3qx1oqrpaw" path="res://Characters/player_del.tscn" id="1_wlons"]
@@ -716,6 +716,9 @@ size = Vector2(26, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hx765"]
 size = Vector2(64, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o5ju"]
+size = Vector2(261, 20)
+
 [node name="Bedroom" type="Node2D"]
 script = ExtResource("1_nvqpj")
 
@@ -776,14 +779,24 @@ position = Vector2(-80, -13.3453)
 shape = SubResource("RectangleShape2D_1nrjt")
 
 [node name="Boss1" parent="." instance=ExtResource("8_fkv4t")]
+process_mode = 4
+visible = false
 position = Vector2(219, 281)
 
 [node name="Exit" type="Area2D" parent="."]
 process_mode = 4
+position = Vector2(304, 344)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
-position = Vector2(304, 344)
 shape = SubResource("RectangleShape2D_hx765")
+
+[node name="BossTrigger" type="Area2D" parent="."]
+position = Vector2(280, 187)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossTrigger"]
+position = Vector2(24, 8)
+shape = SubResource("RectangleShape2D_8o5ju")
 
 [connection signal="tree_exited" from="Boss1" to="." method="_on_boss1_tree_exited"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
+[connection signal="body_entered" from="BossTrigger" to="." method="_on_boss_trigger_body_entered"]

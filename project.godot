@@ -22,11 +22,17 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"anxiety": "res://Levels/practice/anxiety.dch",
+"avoidance": "res://Levels/hallway/avoidance.dch",
 "friend1": "res://Levels/hallway/friend1.dch",
+"lethargy": "res://Levels/bedroom/lethargy.dch",
 "player_del": "res://Characters/player_del.dch"
 }
 directories/dtl_directory={
-"hallway": "res://Levels/hallway/hallway.dtl"
+"bedroom": "res://Levels/bedroom/bedroom.dtl",
+"hallway": "res://Levels/hallway/hallway.dtl",
+"hallwayboss": "res://Levels/hallway/hallwayboss.dtl",
+"practiceboss": "res://Levels/practice/practiceboss.dtl"
 }
 variables={}
 text/letter_speed=0.01
