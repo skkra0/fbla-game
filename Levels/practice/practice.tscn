@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://qo1iis2eb14g"]
+[gd_scene load_steps=30 format=3 uid="uid://qo1iis2eb14g"]
 
 [ext_resource type="PackedScene" uid="uid://c6m3qx1oqrpaw" path="res://Characters/player_del.tscn" id="1_24iay"]
 [ext_resource type="Script" path="res://Levels/practice/practice.gd" id="1_e7up2"]
@@ -15,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://bqi0pn1mjqy60" path="res://Art/sierrassets furniture pack/furniture/individual sprites/part-Slice 142.png" id="13_q5rnv"]
 [ext_resource type="Texture2D" uid="uid://ddfrgq0j1wb2y" path="res://Art/sierrassets furniture pack/furniture/individual sprites/part-Slice 146.png" id="14_y4agj"]
 [ext_resource type="PackedScene" uid="uid://cokq73cv2b1nd" path="res://Levels/practice/boss_3.tscn" id="15_7g2ia"]
+[ext_resource type="PackedScene" uid="uid://d2ef6hylt8nxk" path="res://Characters/npc.tscn" id="16_cwa7u"]
+[ext_resource type="Texture2D" uid="uid://cpjakhv826fcj" path="res://Art/npc2.png" id="17_1epvi"]
+[ext_resource type="Texture2D" uid="uid://cu4dqhshoo557" path="res://Art/npc1.png" id="18_dtqfq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_msum7"]
 texture = ExtResource("2_jn8ix")
@@ -471,7 +474,7 @@ layer_0/tile_data = PackedInt32Array(131078, 196608, 1610612736, 196614, 196608,
 
 [node name="TV" type="Node2D" parent="."]
 z_index = -3
-position = Vector2(289, 93)
+position = Vector2(289, 81)
 scale = Vector2(2.39063, 2.03125)
 
 [node name="Part-slice142" type="Sprite2D" parent="TV"]
@@ -499,7 +502,7 @@ texture = ExtResource("7_vqf0t")
 
 [node name="Part-slice239" type="Sprite2D" parent="Table1"]
 z_index = 1
-position = Vector2(3.5, 8.5)
+position = Vector2(-15, 11)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_828y8")
 
@@ -597,6 +600,38 @@ position = Vector2(534, 232)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
 position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_jjat2")
+
+[node name="Well-Spoken" parent="." instance=ExtResource("16_cwa7u")]
+position = Vector2(283, 113)
+
+[node name="Sprite2D" type="Sprite2D" parent="Well-Spoken"]
+position = Vector2(4, 4)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("17_1epvi")
+
+[node name="Clear" parent="." instance=ExtResource("16_cwa7u")]
+position = Vector2(213, 144)
+
+[node name="Sprite2D" type="Sprite2D" parent="Clear"]
+position = Vector2(4, 4)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("18_dtqfq")
+
+[node name="Change" parent="." instance=ExtResource("16_cwa7u")]
+position = Vector2(166, 224)
+
+[node name="Sprite2D" type="Sprite2D" parent="Change"]
+position = Vector2(4, 4)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("17_1epvi")
+
+[node name="Judgement" parent="." instance=ExtResource("16_cwa7u")]
+position = Vector2(200, 289)
+
+[node name="Sprite2D" type="Sprite2D" parent="Judgement"]
+position = Vector2(4, 4)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("18_dtqfq")
 
 [connection signal="body_entered" from="BossTrigger" to="." method="_on_boss_trigger_body_entered"]
 [connection signal="tree_exited" from="Boss3" to="." method="_on_boss_3_tree_exited"]

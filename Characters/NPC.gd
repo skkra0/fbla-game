@@ -24,7 +24,6 @@ func _on_talk_radius_body_entered(body):
 	if body.name == "PlayerDel":
 		active = true
 
-
 func _on_talk_radius_body_exited(body):
 	if body.name == "PlayerDel":
 		active = false

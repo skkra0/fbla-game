@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dfyhahtf7nye8" path="res://Art/sierrassets furniture pack/furniture/furniture spritesheet.png" id="3_wq3s0"]
 [ext_resource type="Texture2D" uid="uid://dio8pudchlkjw" path="res://Art/small indoor tileset/Furniture 4.png" id="4_pfj8d"]
 [ext_resource type="PackedScene" uid="uid://d2ef6hylt8nxk" path="res://Characters/npc.tscn" id="6_j23ot"]
-[ext_resource type="Texture2D" uid="uid://dkitd7fms31ju" path="res://Art/front.png" id="7_d32a7"]
+[ext_resource type="Texture2D" uid="uid://cu4dqhshoo557" path="res://Art/npc1.png" id="8_1l7t1"]
 [ext_resource type="PackedScene" uid="uid://jgsmoqug3bvw" path="res://Levels/hallway/boss_2.tscn" id="9_cw6r6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7etp"]
@@ -593,7 +593,7 @@ position = Vector2(210, 133)
 [node name="Sprite2D" type="Sprite2D" parent="NPC"]
 position = Vector2(4, 4)
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("7_d32a7")
+texture = ExtResource("8_1l7t1")
 
 [node name="Boss2" parent="." instance=ExtResource("9_cw6r6")]
 process_mode = 4
