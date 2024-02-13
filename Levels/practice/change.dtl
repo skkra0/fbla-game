@@ -1,4 +1,4 @@
-set {npc_name} = "C"
+set {npc_name} = "Sophie"
 Characters/npc: Want to listen to our presentation?
 - Yes
 	set {npc_name} = "F"
