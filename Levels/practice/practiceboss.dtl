@@ -1,2 +1,3 @@
-anxiety: Just think of all the ways this could go wrong. \
+set {npc_name} = "Anxiety"
+Characters/npc: Just think of all the ways this could go wrong. \
 Practice all you want, you’ll ruin it anyways.

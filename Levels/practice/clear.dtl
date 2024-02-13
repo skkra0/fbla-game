@@ -1,0 +1,11 @@
+set {npc_name} = "B"
+Characters/npc: Want to listen to my presentation?
+- Yes
+	Characters/npc: ..... ..... ..... ..... ..... .....
+	Characters/npc: ..... ..... ..... ..... ..... .....
+	Characters/npc: …changing our lives for the better and reshaping the way we define economics as a whole. Thank you.
+	[wait time="1.0"]
+	player_del: He really broke that down in a way that was easy to understand. I’m sure he went through that with his friends for ages.
+	player_del: It’s definitely structured in a way that’s meant for others to follow along. I honestly don’t have any questions.
+- No
+	[end_timeline]

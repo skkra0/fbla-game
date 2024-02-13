@@ -1,0 +1,10 @@
+set {npc_name} = "D"
+Characters/npc: Want to listen to my presentation?
+- Yes
+	Characters/npc: ..... ..... ..... ..... ..... .....
+	Characters/npc: ..... ..... ..... ..... ..... .....
+	Characters/npc: …and by solving for these unknowns, we are able to determine the most effective investments of this past decade, informing the judgment of expert investors nationwide. Thank you, and here are my sources.
+	[wait time="1.0"]
+	player_del: The last time they presented to me went very differently. It’s impressive to see how much they’ve improved since then! They really must have grown and learned from the constructive criticism of others.
+- No
+	[end_timeline]

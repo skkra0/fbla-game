@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var hp = 10
+var hp = 20
 var can_shoot = true
 var can_move = true
 var cooldown = 0.3

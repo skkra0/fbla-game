@@ -1,0 +1,11 @@
+set {npc_name} = "F"
+Characters/npc: Want to listen to our presentation?
+- Yes
+	Characters/npc: ..... ..... ..... ..... ..... .....
+	set {npc_name} = "C"
+	Characters/npc: ..... ..... ..... ..... ..... .....
+	Characters/npc: …utilizing these skills, we were able to address those problems along the way and eliminate the patterns of the past. Thank you all.
+	[wait time="1.0"]
+	player_del: With how seamlessly that presentation flowed together, I could hardly believe that each member of the group focused on something different. They must communicate so well with one another.
+- No
+	[end_timeline]

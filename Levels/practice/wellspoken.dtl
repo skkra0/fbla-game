@@ -1,0 +1,10 @@
+set {npc_name} = "A"
+Characters/npc: Want to listen to my presentation?
+- Yes
+	Characters/npc: ..... ..... ..... ..... ..... .....
+	Characters/npc: ..... ..... ..... ..... ..... .....
+	Characters/npc: …and, in the end, exemplify the interconnected impacts of expanding the network of a single organization. Thank you for listening, and here are my sources.
+	[wait time="1.0"]
+	player_del: Wow. I’ve always known she was well-spoken, but that was something else. She practically commanded the room! After years of giving speeches at protests and events, it’s no wonder she’s so good at that.
+- No
+	[end_timeline]

@@ -27,7 +27,7 @@ func _on_boss_trigger_body_entered(body):
 
 
 func unpause():
-	Dialogic.timeline_ended.disconnect(unpause)
+	#Dialogic.timeline_ended.disconnect(unpause)
 	$PlayerDel.can_move = true
 	$PlayerDel.can_shoot = true
 	$Boss1.visible = true

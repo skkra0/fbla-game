@@ -601,10 +601,10 @@ position = Vector2(534, 232)
 position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_jjat2")
 
-[node name="Well-Spoken" parent="." instance=ExtResource("16_cwa7u")]
+[node name="WellSpoken" parent="." instance=ExtResource("16_cwa7u")]
 position = Vector2(283, 113)
 
-[node name="Sprite2D" type="Sprite2D" parent="Well-Spoken"]
+[node name="Sprite2D" type="Sprite2D" parent="WellSpoken"]
 position = Vector2(4, 4)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("17_1epvi")
@@ -625,10 +625,18 @@ position = Vector2(4, 4)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("17_1epvi")
 
-[node name="Judgement" parent="." instance=ExtResource("16_cwa7u")]
+[node name="Change2" parent="." instance=ExtResource("16_cwa7u")]
+position = Vector2(144, 224)
+
+[node name="Sprite2D" type="Sprite2D" parent="Change2"]
+position = Vector2(4, 4)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("17_1epvi")
+
+[node name="Judgment" parent="." instance=ExtResource("16_cwa7u")]
 position = Vector2(200, 289)
 
-[node name="Sprite2D" type="Sprite2D" parent="Judgement"]
+[node name="Sprite2D" type="Sprite2D" parent="Judgment"]
 position = Vector2(4, 4)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("18_dtqfq")
