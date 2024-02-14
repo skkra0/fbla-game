@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://qo1iis2eb14g"]
+[gd_scene load_steps=31 format=3 uid="uid://qo1iis2eb14g"]
 
 [ext_resource type="PackedScene" uid="uid://c6m3qx1oqrpaw" path="res://Characters/player_del.tscn" id="1_24iay"]
 [ext_resource type="Script" path="res://Levels/practice/practice.gd" id="1_e7up2"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d2ef6hylt8nxk" path="res://Characters/npc.tscn" id="16_cwa7u"]
 [ext_resource type="Texture2D" uid="uid://cpjakhv826fcj" path="res://Art/npc2.png" id="17_1epvi"]
 [ext_resource type="Texture2D" uid="uid://cu4dqhshoo557" path="res://Art/npc1.png" id="18_dtqfq"]
+[ext_resource type="Script" path="res://Pause.gd" id="19_d5rng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_msum7"]
 texture = ExtResource("2_jn8ix")
@@ -640,6 +641,21 @@ position = Vector2(200, 289)
 position = Vector2(4, 4)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("18_dtqfq")
+
+[node name="Pause" type="Node2D" parent="."]
+process_mode = 3
+script = ExtResource("19_d5rng")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Pause"]
+visible = false
+custom_minimum_size = Vector2(540, 260)
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 590.0
+offset_bottom = 310.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+text = "Press Esc again to unpause
+Press Q to exit game"
 
 [connection signal="body_entered" from="BossTrigger" to="." method="_on_boss_trigger_body_entered"]
 [connection signal="tree_exited" from="Boss3" to="." method="_on_boss_3_tree_exited"]
