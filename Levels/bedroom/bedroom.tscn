@@ -811,8 +811,8 @@ offset_top = 50.0
 offset_right = 590.0
 offset_bottom = 310.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-text = "Press Esc again to unpause
-Press Q to exit game"
+text = "Press P again to unpause
+Press Esc to exit"
 
 [connection signal="tree_exited" from="Boss1" to="." method="_on_boss1_tree_exited"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

@@ -11,9 +11,9 @@ func _process(delta):
 	pass
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
+	if Input.is_key_pressed(KEY_P):
 		get_tree().paused = !get_tree().paused
 		$RichTextLabel.visible = !$RichTextLabel.visible
 		
-	if get_tree().paused and Input.is_key_pressed(KEY_Q):
+	if get_tree().paused and event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
