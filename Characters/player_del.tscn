@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6m3qx1oqrpaw"]
+[gd_scene load_steps=8 format=3 uid="uid://c6m3qx1oqrpaw"]
 
 [ext_resource type="Script" path="res://Characters/player_del.gd" id="1_0pfuk"]
 [ext_resource type="Texture2D" uid="uid://d3ykyvr5nh40p" path="res://Art/walk_side.png" id="1_xqswg"]
 [ext_resource type="Texture2D" uid="uid://dpvthunmyrqc0" path="res://Art/walk_side_2.png" id="3_p3s66"]
 [ext_resource type="Texture2D" uid="uid://dicbo68uubhd7" path="res://Art/arm.png" id="4_116t4"]
-[ext_resource type="Script" path="res://Characters/HP.gd" id="5_0lypt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yuyy"]
 size = Vector2(17, 10)
@@ -61,11 +60,6 @@ rotation = -1.5708
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("4_116t4")
 offset = Vector2(69.0807, 52.0326)
-
-[node name="HP" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-script = ExtResource("5_0lypt")
 
 [node name="Cooldown" type="Timer" parent="."]
 

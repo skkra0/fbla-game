@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dyyo0ynmrhqn7"]
+[gd_scene load_steps=20 format=3 uid="uid://dyyo0ynmrhqn7"]
 
 [ext_resource type="Script" path="res://Levels/bedroom/bedroom.gd" id="1_nvqpj"]
 [ext_resource type="PackedScene" uid="uid://c6m3qx1oqrpaw" path="res://Characters/player_del.tscn" id="1_wlons"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://coh1icf0vi1xi" path="res://Art/sierrassets furniture pack/floors and walls/floor and walls spritesheet.png" id="7_ddbj6"]
 [ext_resource type="PackedScene" uid="uid://b3t7hpl4rtx4" path="res://Levels/bedroom/boss1.tscn" id="8_fkv4t"]
 [ext_resource type="Script" path="res://Pause.gd" id="10_pkchw"]
+[ext_resource type="Script" path="res://Characters/HP.gd" id="11_a4trg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1lhiw"]
 texture = ExtResource("2_iayc8")
@@ -813,6 +814,18 @@ offset_bottom = 310.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 text = "Press P again to unpause
 Press Esc to exit"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="CanvasLayer"]
+offset_left = 145.0
+offset_top = 140.0
+offset_right = 146.0
+offset_bottom = 163.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("11_a4trg")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="tree_exited" from="Boss1" to="." method="_on_boss1_tree_exited"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

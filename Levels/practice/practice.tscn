@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://qo1iis2eb14g"]
+[gd_scene load_steps=32 format=3 uid="uid://qo1iis2eb14g"]
 
 [ext_resource type="PackedScene" uid="uid://c6m3qx1oqrpaw" path="res://Characters/player_del.tscn" id="1_24iay"]
 [ext_resource type="Script" path="res://Levels/practice/practice.gd" id="1_e7up2"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cpjakhv826fcj" path="res://Art/npc2.png" id="17_1epvi"]
 [ext_resource type="Texture2D" uid="uid://cu4dqhshoo557" path="res://Art/npc1.png" id="18_dtqfq"]
 [ext_resource type="Script" path="res://Pause.gd" id="19_d5rng"]
+[ext_resource type="Script" path="res://Characters/HP.gd" id="20_ihrin"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_msum7"]
 texture = ExtResource("2_jn8ix")
@@ -656,6 +657,18 @@ offset_bottom = 310.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 text = "Press P again to unpause
 Press Esc to exit"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="CanvasLayer"]
+offset_left = 145.0
+offset_top = 140.0
+offset_right = 146.0
+offset_bottom = 163.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("20_ihrin")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="BossTrigger" to="." method="_on_boss_trigger_body_entered"]
 [connection signal="tree_exited" from="Boss3" to="." method="_on_boss_3_tree_exited"]

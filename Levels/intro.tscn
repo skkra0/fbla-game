@@ -17,11 +17,11 @@ offset_top = 27.0
 offset_right = 590.0
 offset_bottom = 330.0
 theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
-text = "You are a delegate at an FBLA conference. For the last several months, you've been tirelessly preparing a presentation for the event, and today it’ll hopefully all pay off. Make your way from your room to the auditorium to present your work to the judges. But be careful; the hotel is infested with blights who will try to stop you.
+text = "You are a delegate at an FBLA conference. For the last several months, you've been tirelessly preparing a presentation for the event, and today it’ll all pay off. Make your way from your room to the auditorium to present your work to the judges. Be careful of the blights that will block your path. Use your laser pointer to fend them off! 
 
 Controls:
-WASD to move
-Left click to shoot
-Enter to interact
-
-Press enter to continue"
+WASD - Move
+Left click - shoot
+Enter: Interact
+P - Pause
+Press Enter to continue"

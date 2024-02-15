@@ -1,9 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://5sj4iyamv5ny"]
 
 [ext_resource type="Script" path="res://EnemyBullet.gd" id="1_jv8pc"]
-[ext_resource type="Texture2D" uid="uid://bgaflnlclnlks" path="res://icon.svg" id="2_6m6ds"]
+[ext_resource type="Texture2D" uid="uid://cisa47vtwt8o5" path="res://Art/Bullet Pixel 8x8 part 3 B.png" id="2_ir6gg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bbcw"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_boj61"]
+radius = 6.0
 
 [node name="EnemyBullet" type="Node2D"]
 script = ExtResource("1_jv8pc")
@@ -13,11 +14,14 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-scale = Vector2(0.160156, 0.160156)
-texture = ExtResource("2_6m6ds")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_ir6gg")
+hframes = 20
+vframes = 20
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_0bbcw")
+shape = SubResource("CircleShape2D_boj61")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

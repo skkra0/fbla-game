@@ -31,6 +31,7 @@ position = Vector2(33, 32)
 position = Vector2(90, 33)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+visible = false
 position = Vector2(84, 33)
 scale = Vector2(0.0859375, 0.0859375)
 texture = ExtResource("2_15iur")

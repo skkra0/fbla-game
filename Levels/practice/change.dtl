@@ -1,9 +1,9 @@
 set {npc_name} = "Sophie"
 Characters/npc: Want to listen to our presentation?
 - Yes
-	set {npc_name} = "F"
+	set {npc_name} = "Asher"
 	Characters/npc: ..... ..... ..... ..... ..... .....
-	set {npc_name} = "C"
+	set {npc_name} = "Sophie"
 	Characters/npc: ..... ..... ..... ..... ..... .....
 	Characters/npc: …utilizing these skills, we were able to address those problems along the way and eliminate the patterns of the past. Thank you all.
 	[wait time="1.0"]

@@ -6,7 +6,6 @@ func _ready():
 	self.set_as_top_level(true)
 	self.set_position(Vector2(5, 0))
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	self.text = "Player HP: " + str(get_parent().hp)
+	self.text = "Player HP: " + str(get_node("../../PlayerDel").hp)

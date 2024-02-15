@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dh343ojf4y5ll"]
+[gd_scene load_steps=20 format=3 uid="uid://dh343ojf4y5ll"]
 
 [ext_resource type="Script" path="res://Levels/hallway/hallway.gd" id="1_3x6oy"]
 [ext_resource type="Texture2D" uid="uid://cf8ji7gxq86mj" path="res://Art/small indoor tileset/Carpets 4.png" id="1_17p73"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cu4dqhshoo557" path="res://Art/npc1.png" id="8_1l7t1"]
 [ext_resource type="PackedScene" uid="uid://jgsmoqug3bvw" path="res://Levels/hallway/boss_2.tscn" id="9_cw6r6"]
 [ext_resource type="Script" path="res://Pause.gd" id="10_hooiv"]
+[ext_resource type="Script" path="res://Characters/HP.gd" id="11_niwub"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7etp"]
 texture = ExtResource("1_17p73")
@@ -631,6 +632,18 @@ position = Vector2(825, 242)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
 position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_vq2xf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="CanvasLayer"]
+offset_left = 145.0
+offset_top = 140.0
+offset_right = 146.0
+offset_bottom = 163.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("11_niwub")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="tree_exited" from="Boss2" to="." method="_on_boss_2_tree_exited"]
 [connection signal="body_entered" from="BossTrigger" to="." method="_on_boss_trigger_body_entered"]

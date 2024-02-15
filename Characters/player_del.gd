@@ -1,8 +1,8 @@
 extends CharacterBody2D
-var hp = 20
+var hp = 10
 var can_shoot = true
 var can_move = true
-var cooldown = 0.3
+var cooldown = 0.2
 @export var move_speed : float = 100
 const bulletPath = preload('res://PlayerBullet.tscn')
 
