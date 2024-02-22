@@ -4,6 +4,11 @@ var can_shoot = true
 var can_move = true
 var cooldown = 0.2
 @export var move_speed : float = 100
+@export var move_right_action := "right"
+@export var move_left_action := "left"
+@export var move_up_action := "up"
+@export var move_down_action := "down"
+
 const bulletPath = preload('res://PlayerBullet.tscn')
 
 func _ready():
@@ -33,8 +38,8 @@ func _on_cooldown_timeout():
 
 func _physics_process(_delta):
 	var input_direction = Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
+		Input.get_action_strength(move_right_action) - Input.get_action_strength(move_left_action),
+		Input.get_action_strength(move_down_action) - Input.get_action_strength(move_up_action)
 	)
 	var animated_sprite = $AnimatedSprite2D
 	if can_move:
