@@ -19,19 +19,23 @@ func _input(event: InputEvent):
 		return
 	
 	if event.is_action_pressed("ui_accept") and not GameState.has_alive_player():
-		get_tree().change_scene_to_file("res://Levels/intro.tscn")
+		get_tree().change_scene_to_file("res://Levels/intro/intro.tscn")
 	
 	if event.is_action_pressed("ui_accept") and $NPC.active:
 		Dialogic.timeline_ended.connect(unpause)
 		$PlayerDel.can_move = false
 		$PlayerDel.can_shoot = false
+		$PlayerDel2.can_move = false
+		$PlayerDel2.can_shoot = false
 		Dialogic.start("hallway")
-		print("hi")
+
 
 func unpause():
 	#Dialogic.timeline_ended.disconnect(unpause)
 	$PlayerDel.can_move = true
 	$PlayerDel.can_shoot = true
+	$PlayerDel2.can_move = true
+	$PlayerDel2.can_shoot = true
 	
 func _on_boss_trigger_body_entered(body):
 	if body == $PlayerDel or body == $PlayerDel2:

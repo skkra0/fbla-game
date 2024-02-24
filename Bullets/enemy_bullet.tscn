@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://5sj4iyamv5ny"]
 
-[ext_resource type="Script" path="res://EnemyBullet.gd" id="1_jv8pc"]
+[ext_resource type="Script" path="res://Bullets/EnemyBullet.gd" id="1_jv8pc"]
 [ext_resource type="Texture2D" uid="uid://cisa47vtwt8o5" path="res://Art/Bullet Pixel 8x8 part 3 B.png" id="2_ir6gg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_boj61"]

@@ -19,7 +19,7 @@ func _input(event):
 		return
 	
 	if event.is_action_pressed("ui_accept") and not GameState.has_alive_player():
-		get_tree().change_scene_to_file("res://Levels/intro.tscn")
+		get_tree().change_scene_to_file("res://Levels/intro/intro.tscn")
 	
 	if event.is_action_pressed("ui_accept"):
 		if $WellSpoken.active:
@@ -76,4 +76,4 @@ func _on_boss_3_tree_exited():
 
 func _on_exit_body_entered(body):
 	if body == $PlayerDel or body == $PlayerDel2:
-		get_tree().change_scene_to_file("res://Levels/end.tscn")
+		get_tree().change_scene_to_file("res://Levels/end/end.tscn")

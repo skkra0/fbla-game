@@ -2,7 +2,7 @@ extends CharacterBody2D
 var max_hp = 10
 var hp: int
 
-const bullet_scene = preload("res://enemy_bullet.tscn")
+const bullet_scene = preload("res://Bullets/enemy_bullet.tscn")
 @onready var shoot_timer = $ShootTimer
 @onready var rotater = $Rotater
 

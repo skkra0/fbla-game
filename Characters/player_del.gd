@@ -12,7 +12,7 @@ var move_left_action = "left"
 var move_up_action = "up"
 var move_down_action = "down"
 
-const bulletPath = preload('res://PlayerBullet.tscn')
+const bulletPath = preload('res://Bullets/PlayerBullet.tscn')
 
 func _ready():
 	$Cooldown.wait_time = cooldown
