@@ -1,6 +1,6 @@
 extends CharacterBody2D
-
-var hp = 10
+var max_hp = 10
+var hp: int
 
 const bullet_scene = preload("res://enemy_bullet.tscn")
 @onready var shoot_timer = $ShootTimer
@@ -14,7 +14,8 @@ const radius = 100
 
 func _ready():	
 	if GameState.is_multiplayer:
-		hp = 20
+		max_hp *= 2
+	hp = max_hp
 	var step = 2 * PI / spawn_point_count
 	
 	for i in range(spawn_point_count):
@@ -33,6 +34,7 @@ func _process(delta):
 	#THIS DOESNT WORK
 	#$Node2D.look_at(player_del)
 	if hp <= 0:
+		GameState.points += max_hp
 		queue_free()
 
 func _on_shoot_timer_timeout():

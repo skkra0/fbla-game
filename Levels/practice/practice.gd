@@ -12,7 +12,7 @@ func _process(_delta):
 	if GameState.has_alive_player():
 		$CanvasLayer/HP.update_multiplayer($PlayerDel.hp, $PlayerDel2.hp) if GameState.is_multiplayer else $CanvasLayer/HP.update($PlayerDel.hp)
 	else:
-		$CanvasLayer/HP.text = "Game Over! Press Enter to try again"
+		$CanvasLayer/HP.text = "Game Over! Press Enter to try again\nScore: " + str(GameState.points)
 
 func _input(event):
 	if Dialogic.current_timeline:
@@ -55,12 +55,16 @@ func _on_boss_trigger_body_entered(body):
 		Dialogic.timeline_ended.connect(start_boss)
 		$PlayerDel.can_move = false
 		$PlayerDel.can_shoot = false
+		$PlayerDel2.can_move = false
+		$PlayerDel2.can_shoot = false
 		Dialogic.start("practiceboss")
 	
 func start_boss():
 	Dialogic.timeline_ended.disconnect(start_boss)
 	$PlayerDel.can_move = true
 	$PlayerDel.can_shoot = true
+	$PlayerDel2.can_move = true
+	$PlayerDel2.can_shoot = true
 	$Boss3.visible = true
 	$Boss3.process_mode = Node.PROCESS_MODE_INHERIT
 	$BossTrigger.process_mode = Node.PROCESS_MODE_DISABLED

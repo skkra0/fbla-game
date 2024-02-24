@@ -19,4 +19,16 @@ offset_bottom = 310.0
 theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
 text = "Congrats! You did very well in your presentation, and you're grateful to your friends, family, and teachers for helping you to get here. You're especially grateful to all your fellow delegates, who helped you learn the values that FBLA stands for. 
 
+
+
+
+
+
 Press enter to play again"
+
+[node name="Score" type="RichTextLabel" parent="."]
+offset_left = 48.0
+offset_top = 192.0
+offset_right = 519.0
+offset_bottom = 270.0
+theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
