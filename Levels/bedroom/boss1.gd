@@ -14,6 +14,9 @@ const spawn_point_count = 4
 const radius = 100
 
 func _ready():	
+	if GameState.is_multiplayer:
+		hp = 20
+		
 	var step = 2 * PI / spawn_point_count
 	
 	for i in range(spawn_point_count):

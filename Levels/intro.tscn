@@ -10,18 +10,46 @@ custom_minimum_size = Vector2(640, 360)
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Desc" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(540, 260)
 offset_left = 50.0
 offset_top = 27.0
 offset_right = 590.0
-offset_bottom = 330.0
+offset_bottom = 287.0
 theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
-text = "You are a delegate at an FBLA conference. For the last several months, you've been tirelessly preparing a presentation for the event, and today it’ll all pay off. Make your way from your room to the auditorium to present your work to the judges. Be careful of the blights that will block your path. Use your laser pointer to fend them off! 
+text = "You are a delegate at an FBLA conference. For the last several months, you've been tirelessly preparing a presentation for the event, and today it’ll all pay off. Make your way from your room to the auditorium to present your work to the judges. Be careful of the blights that will block your path. Use your laser pointer to fend them off! "
 
-Controls:
-WASD - Move
-Left click - shoot
+[node name="CheckBox" type="CheckBox" parent="."]
+offset_left = 400.0
+offset_top = 193.0
+offset_right = 424.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(0.0392157, 0.180392, 0.498039, 1)
+theme_override_colors/font_pressed_color = Color(0.0392157, 0.180392, 0.498039, 1)
+theme_override_colors/font_hover_color = Color(0.0392157, 0.180392, 0.498039, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.0392157, 0.180392, 0.498039, 1)
+theme_override_colors/font_focus_color = Color(0.0392157, 0.180392, 0.498039, 1)
+theme_override_colors/font_disabled_color = Color(0.0392157, 0.180392, 0.498039, 1)
+theme_override_colors/font_outline_color = Color(0.0392157, 0.180392, 0.498039, 1)
+text = "Multiplayer"
+
+[node name="ControlsDesc" type="RichTextLabel" parent="."]
+offset_left = 48.0
+offset_top = 213.0
+offset_right = 359.0
+offset_bottom = 306.0
+theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
+text = "Left click - shoot
 Enter: Interact
 P - Pause
 Press Enter to continue"
+
+[node name="MoveDesc" type="RichTextLabel" parent="."]
+offset_left = 48.0
+offset_top = 169.0
+offset_right = 309.0
+offset_bottom = 216.0
+theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
+text = "WASD - Move"
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]

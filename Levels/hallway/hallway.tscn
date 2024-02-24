@@ -645,6 +645,12 @@ size_flags_vertical = 0
 script = ExtResource("11_niwub")
 metadata/_edit_use_anchors_ = true
 
+[node name="PlayerDel2" parent="." instance=ExtResource("3_v3omk")]
+process_mode = 4
+visible = false
+position = Vector2(94, 144)
+is_player_1 = false
+
 [connection signal="tree_exited" from="Boss2" to="." method="_on_boss_2_tree_exited"]
 [connection signal="body_entered" from="BossTrigger" to="." method="_on_boss_trigger_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

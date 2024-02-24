@@ -670,6 +670,11 @@ size_flags_vertical = 0
 script = ExtResource("20_ihrin")
 metadata/_edit_use_anchors_ = true
 
+[node name="PlayerDel2" parent="." instance=ExtResource("1_24iay")]
+process_mode = 4
+position = Vector2(108, 164)
+is_player_1 = false
+
 [connection signal="body_entered" from="BossTrigger" to="." method="_on_boss_trigger_body_entered"]
 [connection signal="tree_exited" from="Boss3" to="." method="_on_boss_3_tree_exited"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

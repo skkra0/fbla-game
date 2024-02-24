@@ -3,8 +3,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	if GameState.is_multiplayer:
+		$PlayerDel2.process_mode = Node.PROCESS_MODE_INHERIT
+		$PlayerDel2.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -44,7 +45,7 @@ func unpause():
 	
 
 func _on_boss_trigger_body_entered(body):
-	if body == $PlayerDel:
+	if body == $PlayerDel or body == $PlayerDel2:
 		Dialogic.timeline_ended.connect(start_boss)
 		$PlayerDel.can_move = false
 		$PlayerDel.can_shoot = false
@@ -64,6 +65,5 @@ func _on_boss_3_tree_exited():
 
 
 func _on_exit_body_entered(body):
-	print("exiting practice room..")
-	if body == $PlayerDel:
+	if body == $PlayerDel or body == $PlayerDel2:
 		get_tree().change_scene_to_file("res://Levels/end.tscn")
