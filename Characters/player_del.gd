@@ -28,7 +28,12 @@ func _process(_delta):
 	$Node2D.look_at(get_global_mouse_position())
 	
 	if hp <= 0:
-		queue_free() # remove player
+		self.visible = false
+		self.process_mode = Node.PROCESS_MODE_DISABLED
+		if is_player_1:
+			GameState.player_1_alive = false
+		else:
+			GameState.player_2_alive = false
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:

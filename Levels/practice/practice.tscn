@@ -672,6 +672,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PlayerDel2" parent="." instance=ExtResource("1_24iay")]
 process_mode = 4
+visible = false
 position = Vector2(108, 164)
 is_player_1 = false
 

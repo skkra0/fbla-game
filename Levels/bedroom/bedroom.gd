@@ -8,7 +8,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if GameState.has_alive_player():
+		$CanvasLayer/HP.update_multiplayer($PlayerDel.hp, $PlayerDel2.hp) if GameState.is_multiplayer else $CanvasLayer/HP.update($PlayerDel.hp)
+	else:
+		$CanvasLayer/HP.text = "Game Over! Press Enter to try again"
+
+func _input(event):
+	if event.is_action_pressed("ui_accept") and not GameState.has_alive_player():
+		get_tree().change_scene_to_file("res://Levels/intro.tscn")
 
 func _on_boss1_tree_exited():
 	$Exit.process_mode = Node.PROCESS_MODE_INHERIT # enables the exit

@@ -8,13 +8,19 @@ func _ready():
 		$PlayerDel2.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _process(_delta):
+	if GameState.has_alive_player():
+		$CanvasLayer/HP.update_multiplayer($PlayerDel.hp, $PlayerDel2.hp) if GameState.is_multiplayer else $CanvasLayer/HP.update($PlayerDel.hp)
+	else:
+		$CanvasLayer/HP.text = "Game Over! Press Enter to try again"
 
 func _input(event):
 	if Dialogic.current_timeline:
 		return
-		
+	
+	if event.is_action_pressed("ui_accept") and not GameState.has_alive_player():
+		get_tree().change_scene_to_file("res://Levels/intro.tscn")
+	
 	if event.is_action_pressed("ui_accept"):
 		if $WellSpoken.active:
 			$PlayerDel.can_move = false
