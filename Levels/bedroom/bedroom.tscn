@@ -728,14 +728,6 @@ script = ExtResource("1_nvqpj")
 [node name="PlayerDel" parent="." instance=ExtResource("1_wlons")]
 position = Vector2(352, 112)
 
-[node name="PlayerDel2" parent="." instance=ExtResource("1_wlons")]
-process_mode = 4
-position = Vector2(271, 110)
-move_right_action = "right_2"
-move_left_action = "left_2"
-move_up_action = "up_2"
-move_down_action = "down_2"
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_nu54r")
 format = 2
