@@ -3,11 +3,26 @@ var hp = 10
 var can_shoot = true
 var can_move = true
 var cooldown = 0.2
+
 @export var move_speed : float = 100
+@export var is_player_1 = true
+
+var move_right_action = "right"
+var move_left_action = "left"
+var move_up_action = "up"
+var move_down_action = "down"
+
 const bulletPath = preload('res://PlayerBullet.tscn')
 
 func _ready():
 	$Cooldown.wait_time = cooldown
+	if not is_player_1:
+		move_right_action = "right_2"
+		move_left_action = "left_2"
+		move_up_action = "up_2"
+		move_down_action = "down_2"
+		modulate = Color(1, 1, 4)
+
 	
 func _process(_delta):		
 	$Node2D.look_at(get_global_mouse_position())
@@ -33,8 +48,8 @@ func _on_cooldown_timeout():
 
 func _physics_process(_delta):
 	var input_direction = Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
+		Input.get_action_strength(move_right_action) - Input.get_action_strength(move_left_action),
+		Input.get_action_strength(move_down_action) - Input.get_action_strength(move_up_action)
 	)
 	var animated_sprite = $AnimatedSprite2D
 	if can_move:
