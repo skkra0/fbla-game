@@ -10,4 +10,4 @@ func update(player_hp):
 	self.text = "Player HP: " + str(player_hp)
 	
 func update_multiplayer(p1_hp, p2_hp):
-	self.text = "Player 1 HP: " + str(p1_hp) + " Player 2 HP: " + str(p2_hp)
+	self.text = "Player 1 HP: " + str(p1_hp) + "\nPlayer 2 HP: " + str(p2_hp)

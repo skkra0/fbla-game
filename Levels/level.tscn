@@ -1,6 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://cthhmks0ueu4e"]
+[gd_scene load_steps=5 format=3 uid="uid://cthhmks0ueu4e"]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_mn1l8"]
+[ext_resource type="PackedScene" uid="uid://c6m3qx1oqrpaw" path="res://Characters/player_del.tscn" id="2_ehlq3"]
+[ext_resource type="Script" path="res://Pause.gd" id="3_m5aaq"]
+[ext_resource type="Script" path="res://Characters/HP.gd" id="4_ou3i5"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_mn1l8")
+
+[node name="PlayerDel" parent="." instance=ExtResource("2_ehlq3")]
+position = Vector2(145, 140)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerDel"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Pause" type="Node2D" parent="PlayerDel"]
+process_mode = 3
+position = Vector2(-145, -140)
+script = ExtResource("3_m5aaq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayerDel/Pause"]
+visible = false
+custom_minimum_size = Vector2(540, 260)
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 590.0
+offset_bottom = 310.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+text = "Press P again to unpause
+Press Esc to exit"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(145, 140)
+
+[node name="PlayerDel2" parent="." instance=ExtResource("2_ehlq3")]
+process_mode = 4
+visible = false
+position = Vector2(94, 144)
+is_player_1 = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HP" type="Label" parent="CanvasLayer"]
+offset_left = 145.0
+offset_top = 140.0
+offset_right = 146.0
+offset_bottom = 163.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("4_ou3i5")
+metadata/_edit_use_anchors_ = true

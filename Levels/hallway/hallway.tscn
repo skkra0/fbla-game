@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dh343ojf4y5ll"]
+[gd_scene load_steps=21 format=3 uid="uid://dh343ojf4y5ll"]
 
 [ext_resource type="Script" path="res://Levels/hallway/hallway.gd" id="1_3x6oy"]
 [ext_resource type="Texture2D" uid="uid://cf8ji7gxq86mj" path="res://Art/small indoor tileset/Carpets 4.png" id="1_17p73"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cu4dqhshoo557" path="res://Art/npc1.png" id="8_1l7t1"]
 [ext_resource type="PackedScene" uid="uid://jgsmoqug3bvw" path="res://Levels/hallway/boss_2.tscn" id="9_cw6r6"]
 [ext_resource type="Script" path="res://Pause.gd" id="10_hooiv"]
+[ext_resource type="Script" path="res://Levels/Boss.gd" id="11_elh8i"]
 [ext_resource type="Script" path="res://Characters/HP.gd" id="11_niwub"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7etp"]
@@ -613,10 +614,16 @@ position = Vector2(4, 4)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("8_1l7t1")
 
-[node name="Boss2" parent="." instance=ExtResource("9_cw6r6")]
+[node name="Boss" parent="." instance=ExtResource("9_cw6r6")]
 process_mode = 4
 visible = false
 position = Vector2(620, 190)
+script = ExtResource("11_elh8i")
+max_hp = 10
+rotate_speed = 200
+shoot_timer_wait_time = 0.2
+spawn_point_count = 4
+radius = 100
 
 [node name="BossTrigger" type="Area2D" parent="."]
 position = Vector2(442, 181)
@@ -651,6 +658,6 @@ visible = false
 position = Vector2(94, 144)
 is_player_1 = false
 
-[connection signal="tree_exited" from="Boss2" to="." method="_on_boss_2_tree_exited"]
+[connection signal="tree_exited" from="Boss" to="." method="_on_boss_2_tree_exited"]
 [connection signal="body_entered" from="BossTrigger" to="." method="_on_boss_trigger_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
