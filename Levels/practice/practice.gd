@@ -43,5 +43,5 @@ func _on_boss_3_tree_exited():
 func _on_exit_body_entered(body):
 	if body == $PlayerDel or body == $PlayerDel2:
 		var rm = func():
-			get_tree().change_scene_to_file("res://Levels/hallway/hallway.tscn")
+			get_tree().change_scene_to_file("res://Levels/end/end.tscn")
 		rm.call_deferred()

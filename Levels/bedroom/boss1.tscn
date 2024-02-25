@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3t7hpl4rtx4"]
 
-[ext_resource type="Script" path="res://Levels/bedroom/boss1.gd" id="1_41f5a"]
+[ext_resource type="Script" path="res://Levels/Boss.gd" id="1_41f5a"]
 [ext_resource type="Texture2D" uid="uid://bgaflnlclnlks" path="res://icon.svg" id="1_wqmf5"]
 [ext_resource type="Texture2D" uid="uid://bb56088j3edny" path="res://Art/lethargy.png" id="2_26660"]
 

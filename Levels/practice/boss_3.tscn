@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cokq73cv2b1nd"]
 
-[ext_resource type="Script" path="res://Levels/practice/boss3.gd" id="1_07quo"]
+[ext_resource type="Script" path="res://Levels/Boss.gd" id="1_07quo"]
 [ext_resource type="Texture2D" uid="uid://bp8dfhd8gblv6" path="res://Art/anxiety.png" id="2_jmxhy"]
 [ext_resource type="Texture2D" uid="uid://bgaflnlclnlks" path="res://icon.svg" id="2_ldqlv"]
 
