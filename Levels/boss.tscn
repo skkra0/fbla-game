@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqn3l0yf6ynkc"]
+
+[ext_resource type="Script" path="res://Levels/Boss.gd" id="1_jih66"]
+
+[node name="Boss" type="CharacterBody2D"]
+script = ExtResource("1_jih66")
+
+[node name="SpiralTimer" type="Timer" parent="."]
+
+[node name="StackTimer" type="Timer" parent="."]
+
+[node name="SpiralRotator" type="Node2D" parent="."]
+position = Vector2(33, 32)
+
+[node name="StackRotator" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+process_mode = 4
+
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
+position = Vector2(90, 33)

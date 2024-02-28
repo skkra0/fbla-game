@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dh343ojf4y5ll"]
+[gd_scene load_steps=22 format=3 uid="uid://dh343ojf4y5ll"]
 
 [ext_resource type="Script" path="res://Levels/hallway/hallway.gd" id="1_3x6oy"]
 [ext_resource type="Texture2D" uid="uid://cf8ji7gxq86mj" path="res://Art/small indoor tileset/Carpets 4.png" id="1_17p73"]
@@ -8,10 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://dio8pudchlkjw" path="res://Art/small indoor tileset/Furniture 4.png" id="4_pfj8d"]
 [ext_resource type="PackedScene" uid="uid://d2ef6hylt8nxk" path="res://Characters/npc.tscn" id="6_j23ot"]
 [ext_resource type="Texture2D" uid="uid://cu4dqhshoo557" path="res://Art/npc1.png" id="8_1l7t1"]
-[ext_resource type="PackedScene" uid="uid://jgsmoqug3bvw" path="res://Levels/hallway/boss_2.tscn" id="9_cw6r6"]
 [ext_resource type="Script" path="res://Pause.gd" id="10_hooiv"]
-[ext_resource type="Script" path="res://Levels/Boss.gd" id="11_elh8i"]
+[ext_resource type="PackedScene" uid="uid://dqn3l0yf6ynkc" path="res://Levels/boss.tscn" id="11_hwd8x"]
 [ext_resource type="Script" path="res://Characters/HP.gd" id="11_niwub"]
+[ext_resource type="Texture2D" uid="uid://dpnixk4e0ik5u" path="res://Art/avoidance.png" id="12_c8gu5"]
+[ext_resource type="Texture2D" uid="uid://qgy82ntxosnb" path="res://Art/sierrassets furniture pack/pets/pets spritesheet.png" id="13_givqk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7etp"]
 texture = ExtResource("1_17p73")
@@ -614,17 +615,6 @@ position = Vector2(4, 4)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("8_1l7t1")
 
-[node name="Boss" parent="." instance=ExtResource("9_cw6r6")]
-process_mode = 4
-visible = false
-position = Vector2(620, 190)
-script = ExtResource("11_elh8i")
-max_hp = 10
-rotate_speed = 200
-shoot_timer_wait_time = 0.2
-spawn_point_count = 4
-radius = 100
-
 [node name="BossTrigger" type="Area2D" parent="."]
 position = Vector2(442, 181)
 
@@ -658,6 +648,36 @@ visible = false
 position = Vector2(94, 144)
 is_player_1 = false
 
-[connection signal="tree_exited" from="Boss" to="." method="_on_boss_2_tree_exited"]
+[node name="Boss" parent="." instance=ExtResource("11_hwd8x")]
+process_mode = 4
+visible = false
+position = Vector2(683, 244)
+
+[node name="Hurtbox" type="Area2D" parent="Boss"]
+position = Vector2(-4, 1)
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boss/Hurtbox"]
+position = Vector2(14, -10)
+scale = Vector2(4.8, 4.8)
+polygon = PackedVector2Array(-5.625, -4.79167, 6.25, 7.5, -5.41667, 7.29167)
+
+[node name="Sprite2D" type="Sprite2D" parent="Boss"]
+position = Vector2(11, -20)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_c8gu5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Boss"]
+position = Vector2(10.5, 0)
+scale = Vector2(4.95, 3.5)
+
+[node name="cat" type="Sprite2D" parent="."]
+position = Vector2(303, 158)
+scale = Vector2(2, 2)
+texture = ExtResource("13_givqk")
+hframes = 13
+vframes = 2
+frame = 5
+
 [connection signal="body_entered" from="BossTrigger" to="." method="_on_boss_trigger_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

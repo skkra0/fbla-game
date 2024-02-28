@@ -10,7 +10,6 @@ func _input(event: InputEvent):
 		Dialogic.timeline_ended.connect(func(): super.unpause_players(), CONNECT_ONE_SHOT)
 		super.pause_players()
 		Dialogic.start("hallway")
-
 	
 func _on_boss_trigger_body_entered(body):
 	if body == $PlayerDel or body == $PlayerDel2:

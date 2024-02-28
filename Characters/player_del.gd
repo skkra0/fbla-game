@@ -2,7 +2,7 @@ extends CharacterBody2D
 var hp = 10
 var can_shoot = true
 var can_move = true
-var cooldown = 0.2
+var cooldown = 0.3
 
 @export var move_speed : float = 100
 @export var is_player_1 = true
