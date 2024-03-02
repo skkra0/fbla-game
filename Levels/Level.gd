@@ -23,6 +23,7 @@ func start_boss():
 	$Boss.visible  = true
 	$Boss.process_mode = Node.PROCESS_MODE_INHERIT
 	$BossTrigger.process_mode = Node.PROCESS_MODE_DISABLED
+	$Boss._start()
 
 func pause_players():
 	$PlayerDel.can_move = false

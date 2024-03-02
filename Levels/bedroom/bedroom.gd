@@ -1,10 +1,12 @@
 extends "res://Levels/Level.gd"
 
-func _on_boss1_tree_exited():
+func _on_boss_tree_exited():
 	$Exit.process_mode = Node.PROCESS_MODE_INHERIT # enables the exit
 
 func _on_exit_body_entered(body):
 	if body == $PlayerDel or body == $PlayerDel2:
+		GameState.player_1_hp = $PlayerDel.hp
+		GameState.player_2_hp = $PlayerDel2.hp
 		var rm = func():
 			get_tree().change_scene_to_file("res://Levels/hallway/hallway.tscn")
 		rm.call_deferred()

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var hp = 10
+
 var can_shoot = true
 var can_move = true
 var cooldown = 0.3
@@ -11,7 +11,7 @@ var move_right_action = "right"
 var move_left_action = "left"
 var move_up_action = "up"
 var move_down_action = "down"
-
+var hp = GameState.player_1_hp
 const bulletPath = preload('res://Bullets/PlayerBullet.tscn')
 
 func _ready():
@@ -22,7 +22,7 @@ func _ready():
 		move_up_action = "up_2"
 		move_down_action = "down_2"
 		modulate = Color(1, 1, 4)
-
+		hp = GameState.player_2_hp
 	
 func _process(_delta):		
 	$Node2D.look_at(get_global_mouse_position())
@@ -79,5 +79,4 @@ func _physics_process(_delta):
 
 func _on_hurtbox_area_entered(area):
 	area.queue_free()
-	print("shot")
 	hp -= 2
