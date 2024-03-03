@@ -650,6 +650,7 @@ is_player_1 = false
 
 [node name="Boss" parent="." instance=ExtResource("11_hwd8x")]
 process_mode = 4
+visible = false
 position = Vector2(480, 237)
 max_hp = 20
 state_set = Array[int]([0])
