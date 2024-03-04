@@ -47,6 +47,7 @@ func _process(delta):
 		PATTERNS.SPIRAL:
 			var new_rotation = spiral_rotator.rotation_degrees + rotate_speed * delta
 			spiral_rotator.rotation_degrees = fmod(new_rotation, 360)
+			
 		PATTERNS.STACK:
 			stack_rotator.look_at(get_node("../PlayerDel").position)
 	if hp <= 0:

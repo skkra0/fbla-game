@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyssp37bn27hj"]
+
+[ext_resource type="Script" path="res://Bullets/PlayerBullet.gd" id="1_wsruk"]
+[ext_resource type="Texture2D" uid="uid://bgaflnlclnlks" path="res://icon.svg" id="2_03nl5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h30e0"]
+
+[node name="EnemyBullet" type="Node2D"]
+
+[node name="CharacterBody2D" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("1_wsruk")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.278846, 0.278846)
+texture = ExtResource("2_03nl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_h30e0")
+
+[connection signal="body_entered" from="CharacterBody2D" to="CharacterBody2D" method="_on_body_entered"]

@@ -728,3 +728,4 @@ scale = Vector2(8.3, 6.45)
 
 [connection signal="body_entered" from="BossTrigger" to="." method="_on_boss_trigger_body_entered"]
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
+[connection signal="tree_exited" from="Boss" to="." method="_on_boss_tree_exited"]

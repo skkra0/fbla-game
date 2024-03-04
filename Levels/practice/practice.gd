@@ -33,12 +33,9 @@ func _on_boss_trigger_body_entered(body):
 		Dialogic.timeline_ended.connect(func(): super.start_boss(), CONNECT_ONE_SHOT)
 		super.pause_players()
 		Dialogic.start("practiceboss")
-	
 
-
-func _on_boss_3_tree_exited():
+func _on_boss_tree_exited():
 	$Exit.process_mode = Node.PROCESS_MODE_INHERIT
-
 
 func _on_exit_body_entered(body):
 	if body == $PlayerDel or body == $PlayerDel2:
