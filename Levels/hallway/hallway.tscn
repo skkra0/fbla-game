@@ -654,7 +654,7 @@ process_mode = 4
 visible = false
 position = Vector2(480, 237)
 max_hp = 20
-radius = 80
+base_bullet_speed = 80
 state_set = Array[int]([0])
 
 [node name="Hurtbox" type="Area2D" parent="Boss"]

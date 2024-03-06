@@ -23,16 +23,22 @@ func start_boss():
 	$Boss.visible  = true
 	$Boss.process_mode = Node.PROCESS_MODE_INHERIT
 	$BossTrigger.process_mode = Node.PROCESS_MODE_DISABLED
+	print("starting  boss")
 	$Boss._start()
 
 func pause_players():
 	$PlayerDel.can_move = false
 	$PlayerDel.can_shoot = false
+	$PlayerDel/Cooldown.process_mode = Node.PROCESS_MODE_DISABLED
 	$PlayerDel2.can_move = false
 	$PlayerDel2.can_shoot = false
+	$PlayerDel2/Cooldown.process_mode = Node.PROCESS_MODE_DISABLED
+	print("players are paused")
 	
 func unpause_players():
 	$PlayerDel.can_move = true
 	$PlayerDel.can_shoot = true
+	$PlayerDel/Cooldown.process_mode = Node.PROCESS_MODE_INHERIT
 	$PlayerDel2.can_move = true
 	$PlayerDel2.can_shoot = true
+	$PlayerDel2/Cooldown.process_mode = Node.PROCESS_MODE_INHERIT

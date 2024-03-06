@@ -836,7 +836,8 @@ is_player_1 = false
 process_mode = 4
 visible = false
 position = Vector2(304, 305)
-base_bullet_speed = 65
+stack_wait_time = 2.2
+base_bullet_speed = 50
 state_set = Array[int]([1])
 
 [node name="Hurtbox" type="Area2D" parent="Boss"]

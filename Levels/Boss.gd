@@ -1,27 +1,27 @@
 extends Node
 
 enum PATTERNS {
-	SPIRAL = 0,
-	STACK = 1
+	SPIRAL,
+	STACK
 }
+# Variables to set for each boss
 @export var max_hp = 10
-
 @export var rotate_speed = 100
 @export var spiral_wait_time = 0.2
 @export var stack_wait_time = 1.2
 @export var pattern_change_time = 5
 @export var spiral_spawn_point_count = 4
-var stack_spawn_count = 3 
-@export var radius = 110
+@export var radius = 80
 @export var base_bullet_speed = 100
+@export var state_set : Array[PATTERNS] = [] # Ordered list of patterns to use
 
-@export var state_set : Array[PATTERNS] = []
-
+var stack_spawn_count = 3 
 const bullet_scene = preload("res://Bullets/enemy_bullet.tscn")
 @onready var spiral_rotator = $SpiralRotator
 @onready var stack_rotator =  $StackRotator
 
-var state_index = 0
+var state_index = 0 # What pattern are we currently using?
+
 var spiral_step = 2 * PI / spiral_spawn_point_count
 var hp: int
 # Called when the node enters the scene tree for the first time.
@@ -66,13 +66,15 @@ func _on_spiral_timer_timeout():
 			
 					
 func _on_stack_timer_timeout():
-	for s in stack_rotator.get_children():
-		for i in range(3):
-			var bullet = bullet_scene.instantiate()
-			bullet.speed = base_bullet_speed + 10 * i
-			bullet.position = s.global_position
-			bullet.rotation = s.global_rotation
-			owner.add_child(bullet)
+	#if $VisibleOnScreenNotifier2D.is_on_screen():
+		for s in stack_rotator.get_children():
+			print("hi")
+			for i in range(3):
+				var bullet = bullet_scene.instantiate()
+				bullet.speed = base_bullet_speed + 10 * i
+				bullet.position = s.global_position
+				bullet.rotation = s.global_rotation
+				owner.add_child(bullet)
 			
 
 func _on_hurtbox_area_entered(area):
@@ -80,18 +82,23 @@ func _on_hurtbox_area_entered(area):
 	area.queue_free()
 
 func _spiral_init():
+	# preparing the spiral pattern
 	for i in range(spiral_spawn_point_count):
+		# creating spawn points for bullets
+		# will be constantly rotated around the boss
 		var spawn_point = Node2D.new()
 		var pos = Vector2(radius, 0).rotated(spiral_step * i)
 		spawn_point.position = pos
 		spawn_point.rotation = pos.angle()
 		spiral_rotator.add_child(spawn_point)
 	$SpiralTimer.wait_time = spiral_wait_time
-	#$SpiralTimer.start()
+
 	
 func _stack_init():
+	# preparing the stack pattern
 	var start = -PI / 8
 	for i in range(stack_spawn_count):
+		# creates spawnpoints which will rotate towards the player
 		var spawn = Node2D.new()
 		var pos = Vector2(radius / 2.0, 0).rotated(start + i * PI / 8)
 		spawn.position = pos
@@ -108,6 +115,7 @@ func _start():
 			$SpiralTimer.start()
 		PATTERNS.STACK:
 			stack_rotator.look_at(get_node("../PlayerDel").position)
+			print("starting")
 			_on_stack_timer_timeout()
 			$StackTimer.start()
 	
@@ -116,6 +124,7 @@ func reset():
 	$StackTimer.stop()
 
 func _on_pattern_timer_timeout():
+	# changes the attack pattern every time PatternTimer times out
 	reset()
 	state_index += 1
 	state_index %= state_set.size()

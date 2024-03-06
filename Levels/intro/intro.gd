@@ -1,18 +1,25 @@
 extends Node2D
 
-var multiplayer_move = "WASD - Move Player 1\nArrow Keys - Move Player 2"
-var singleplayer_move = "WASD - Move"
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+var help_menu_open = false
+
 func _ready():
 	GameState.reset()
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		get_tree().change_scene_to_file("res://Levels/bedroom/bedroom.tscn")
+	if event.is_action_pressed("ui_accept") and help_menu_open:
+		$Help.visible = false
 
 func _on_check_box_toggled(toggled_on):
-	if toggled_on:
-		$MoveDesc.text = multiplayer_move
-	else:
-		$MoveDesc.text = singleplayer_move
 	GameState.is_multiplayer = toggled_on
+
+	
+
+
+func _on_help_button_down():
+	print("help")
+	help_menu_open = true
+	$Help.visible = true
+
+
+func _on_play_button_down():
+	get_tree().change_scene_to_file("res://Levels/bedroom/bedroom.tscn")
