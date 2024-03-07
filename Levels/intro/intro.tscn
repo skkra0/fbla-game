@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://domol3h3w360e"]
+[gd_scene load_steps=7 format=3 uid="uid://domol3h3w360e"]
 
 [ext_resource type="Script" path="res://Levels/intro/intro.gd" id="1_8mfcr"]
 [ext_resource type="Texture2D" uid="uid://boj7e5k325o4u" path="res://Art/main_menu.png" id="2_q4jse"]
 [ext_resource type="Texture2D" uid="uid://d4cblw40nn88x" path="res://Art/help.png" id="3_l3ww1"]
 [ext_resource type="Texture2D" uid="uid://ddtah6opnhtsm" path="res://Art/play.png" id="4_r40jf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ek8vd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eaoeu"]
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_8mfcr")
@@ -14,25 +18,36 @@ offset_bottom = 360.0
 texture = ExtResource("2_q4jse")
 
 [node name="HelpButton" type="Button" parent="."]
-offset_left = 72.0
-offset_top = 203.0
-offset_right = 146.0
-offset_bottom = 231.0
+offset_left = 59.0
+offset_top = 198.0
+offset_right = 155.0
+offset_bottom = 230.0
 focus_mode = 0
-icon = ExtResource("3_l3ww1")
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ek8vd")
+
+[node name="Sprite2D" type="Sprite2D" parent="HelpButton"]
+position = Vector2(47, 15)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("3_l3ww1")
 
 [node name="PlayButton" type="Button" parent="."]
-offset_left = 68.0
-offset_top = 296.0
-offset_right = 142.0
+offset_left = 64.0
+offset_top = 294.0
+offset_right = 148.0
 offset_bottom = 324.0
-focus_mode = 0
-icon = ExtResource("4_r40jf")
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eaoeu")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayButton"]
+position = Vector2(42, 14.5)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("4_r40jf")
 
 [node name="CheckBox" type="CheckBox" parent="."]
-offset_left = 53.0
-offset_top = 244.0
-offset_right = 170.0
+offset_left = 35.0
+offset_top = 245.0
+offset_right = 195.0
 offset_bottom = 275.0
 focus_mode = 0
 theme_override_colors/font_color = Color(0.0392157, 0.180392, 0.498039, 1)
@@ -42,13 +57,13 @@ theme_override_colors/font_hover_pressed_color = Color(0.0392157, 0.180392, 0.49
 theme_override_colors/font_focus_color = Color(0.0392157, 0.180392, 0.498039, 1)
 theme_override_colors/font_disabled_color = Color(0.0392157, 0.180392, 0.498039, 1)
 theme_override_colors/font_outline_color = Color(0.0392157, 0.180392, 0.498039, 1)
-text = "Multiplayer"
 
 [node name="Help" type="ColorRect" parent="."]
 visible = false
 custom_minimum_size = Vector2(640, 360)
 offset_right = 40.0
 offset_bottom = 40.0
+color = Color(0.54902, 0.262745, 0.164706, 1)
 
 [node name="Desc" type="RichTextLabel" parent="Help"]
 custom_minimum_size = Vector2(540, 260)
@@ -57,8 +72,8 @@ offset_left = 50.0
 offset_top = 27.0
 offset_right = 590.0
 offset_bottom = 287.0
-theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
-text = "You are a delegate at an FBLA conference. For the last several months, you've been tirelessly preparing a presentation for the event, and today it’ll all pay off. Make your way from your room to the auditorium to present your work to the judges. Be careful of the blights that will block your path. Use your laser pointer to fend them off! "
+theme_override_colors/default_color = Color(0.917647, 0.901961, 1, 1)
+text = "You are a delegate at an FBLA conference. For the last several months, you've been tirelessly preparing a presentation for the event, and today it’ll all pay off. Make your way from your room to the auditorium to present your work to the judges. Be careful of the blights that will block your path. Use your laser pointer to fend them off!"
 
 [node name="ControlsDesc" type="RichTextLabel" parent="Help"]
 layout_mode = 0
@@ -66,9 +81,9 @@ offset_left = 48.0
 offset_top = 213.0
 offset_right = 359.0
 offset_bottom = 306.0
-theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
+theme_override_colors/default_color = Color(0.917647, 0.901961, 1, 1)
 text = "Left click - shoot
-Enter: Interact
+Enter/Space: Interact
 P - Pause
 Press Enter to continue"
 
@@ -78,7 +93,7 @@ offset_left = 48.0
 offset_top = 169.0
 offset_right = 309.0
 offset_bottom = 216.0
-theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
+theme_override_colors/default_color = Color(0.917647, 0.901961, 1, 1)
 text = "WASD - Move Player 1
 Arrow Keys - Move Player 2"
 

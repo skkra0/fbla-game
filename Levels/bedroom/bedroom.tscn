@@ -801,18 +801,26 @@ shape = SubResource("RectangleShape2D_8o5ju")
 
 [node name="Pause" type="Node2D" parent="."]
 process_mode = 3
+visible = false
+z_index = 5
 script = ExtResource("10_pkchw")
 
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+offset_left = 133.0
+offset_top = 35.0
+offset_right = 379.0
+offset_bottom = 87.0
+color = Color(0.54902, 0.262745, 0.164706, 1)
+
 [node name="RichTextLabel" type="RichTextLabel" parent="Pause"]
-visible = false
 custom_minimum_size = Vector2(540, 260)
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 590.0
-offset_bottom = 310.0
+offset_left = 139.0
+offset_top = 34.0
+offset_right = 679.0
+offset_bottom = 294.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 text = "Press P again to unpause
-Press Esc to exit"
+Press Esc to exit to main menu"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

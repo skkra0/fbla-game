@@ -591,11 +591,19 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="Pause" type="Node2D" parent="PlayerDel"]
 process_mode = 3
+visible = false
+z_index = 5
 position = Vector2(-145, -140)
 script = ExtResource("10_hooiv")
 
+[node name="ColorRect" type="ColorRect" parent="PlayerDel/Pause"]
+offset_left = 46.0
+offset_top = 52.0
+offset_right = 292.0
+offset_bottom = 104.0
+color = Color(0.54902, 0.262745, 0.164706, 1)
+
 [node name="RichTextLabel" type="RichTextLabel" parent="PlayerDel/Pause"]
-visible = false
 custom_minimum_size = Vector2(540, 260)
 offset_left = 50.0
 offset_top = 50.0
@@ -603,7 +611,7 @@ offset_right = 590.0
 offset_bottom = 310.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 text = "Press P again to unpause
-Press Esc to exit"
+Press Esc to exit to main menu"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(143, 141)
@@ -676,6 +684,7 @@ position = Vector2(10, 7.5)
 scale = Vector2(9.7, 6.55)
 
 [node name="cat" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(278, 158)
 scale = Vector2(2, 2)
 texture = ExtResource("13_givqk")

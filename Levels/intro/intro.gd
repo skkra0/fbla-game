@@ -22,4 +22,5 @@ func _on_help_button_down():
 
 
 func _on_play_button_down():
+	print("play")
 	get_tree().change_scene_to_file("res://Levels/bedroom/bedroom.tscn")

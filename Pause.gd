@@ -13,7 +13,9 @@ func _process(delta):
 func _input(event):
 	if Input.is_key_pressed(KEY_P):
 		get_tree().paused = !get_tree().paused
-		$RichTextLabel.visible = !$RichTextLabel.visible
+		self.visible = !self.visible
 		
 	if get_tree().paused and event.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+		GameState.reset()
+		get_tree().paused = false
+		get_tree().change_scene_to_file("res://Levels/intro/intro.tscn")

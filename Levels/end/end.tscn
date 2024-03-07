@@ -9,6 +9,7 @@ script = ExtResource("1_8mfcr")
 custom_minimum_size = Vector2(640, 360)
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(540, 260)
@@ -25,6 +26,7 @@ text = "Congrats! You did very well in your presentation, and you're grateful to
 
 
 Press enter to play again"
+metadata/_edit_use_anchors_ = true
 
 [node name="Score" type="RichTextLabel" parent="."]
 offset_left = 48.0
@@ -32,3 +34,4 @@ offset_top = 192.0
 offset_right = 519.0
 offset_bottom = 270.0
 theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
+metadata/_edit_use_anchors_ = true
