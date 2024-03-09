@@ -712,10 +712,11 @@ position = Vector2(108, 164)
 is_player_1 = false
 
 [node name="Boss" parent="." instance=ExtResource("20_d1vex")]
+process_mode = 4
 visible = false
 position = Vector2(476, 213)
 max_hp = 25
-rotate_speed = 120
+rotate_speed = 90
 pattern_change_time = 4
 state_set = Array[int]([1, 0])
 

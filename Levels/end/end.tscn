@@ -1,37 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://domol3h3w360e"]
+[gd_scene load_steps=3 format=3 uid="uid://domol3h3w360e"]
 
 [ext_resource type="Script" path="res://Levels/end/end.gd" id="1_8mfcr"]
+[ext_resource type="Texture2D" uid="uid://dwj4xj3ln4ieq" path="res://Art/victory.png" id="2_gxxec"]
 
 [node name="End" type="Node2D"]
 script = ExtResource("1_8mfcr")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(640, 360)
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_gxxec")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-custom_minimum_size = Vector2(540, 260)
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 590.0
-offset_bottom = 310.0
-theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
-text = "Congrats! You did very well in your presentation, and you're grateful to your friends, family, and teachers for helping you to get here. You're especially grateful to all your fellow delegates, who helped you learn the values that FBLA stands for. 
-
-
-
-
-
-
-Press enter to play again"
+offset_left = 420.0
+offset_top = 314.0
+offset_right = 620.0
+offset_bottom = 364.0
+theme_override_colors/default_color = Color(0.917647, 0.901961, 1, 1)
+text = "Press Enter to play again"
 metadata/_edit_use_anchors_ = true
 
 [node name="Score" type="RichTextLabel" parent="."]
-offset_left = 48.0
-offset_top = 192.0
-offset_right = 519.0
-offset_bottom = 270.0
-theme_override_colors/default_color = Color(0.0392157, 0.180392, 0.498039, 1)
+offset_left = 420.0
+offset_top = 291.0
+offset_right = 620.0
+offset_bottom = 316.0
+theme_override_colors/default_color = Color(0.917647, 0.901961, 1, 1)
 metadata/_edit_use_anchors_ = true
